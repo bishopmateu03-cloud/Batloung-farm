@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard · Batloung Farm DMS</title>
+  <link rel="icon" href="../assets/images/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body data-page="dashboard">
+  <div class="app">
+    <aside id="sidebar" class="sidebar"></aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <h1>Dashboard</h1>
+          <p class="subtitle">Welcome to Batloung Farm Distribution Management System</p>
+        </div>
+        <div class="topbar-actions"><a class="btn btn-outline" href="../pages/purchases.html?new=1">🚚 New purchase</a>
+          <a class="btn btn-accent" href="../pages/sales.html?new=1">🧾 New sale</a></div>
+      </header>
+      <div id="dashError"></div>
+      <section class="grid grid-4">
+        <div class="card kpi" id="kpiStock"><div class="kpi-icon green" aria-hidden="true">📦</div>
+          <div><div class="kpi-label">Boxes in stock</div><div class="kpi-value">…</div><div class="kpi-sub"></div></div></div>
+        <div class="card kpi" id="kpiLow"><div class="kpi-icon red" aria-hidden="true">⚠️</div>
+          <div><div class="kpi-label">Low stock items</div><div class="kpi-value">…</div><div class="kpi-sub"></div></div></div>
+        <div class="card kpi" id="kpiRevenue"><div class="kpi-icon orange" aria-hidden="true">💰</div>
+          <div><div class="kpi-label">Revenue this month</div><div class="kpi-value">…</div><div class="kpi-sub"></div></div></div>
+        <div class="card kpi" id="kpiCredit"><div class="kpi-icon blue" aria-hidden="true">💳</div>
+          <div><div class="kpi-label">Outstanding credit</div><div class="kpi-value">…</div><div class="kpi-sub"></div></div></div>
+      </section>
+
+      <section class="grid grid-3" style="margin-top:20px">
+        <div class="card span-2">
+          <div class="card-header"><div><h2>Stock by packaging size</h2><p class="small muted">Boxes available per fruit and size</p></div>
+            <a class="btn btn-outline btn-sm" href="../pages/stock.html">Manage stock</a></div>
+          <div id="stockMatrix" ><div class="loading">Loading…</div></div>
+        </div>
+        <div class="card">
+          <div class="card-header"><h2>Low stock alerts</h2><a class="small" href="../pages/stock.html?low=1">View all</a></div>
+          <div id="lowStock" ><div class="loading">Loading…</div></div>
+        </div>
+      </section>
+
+      <section class="grid grid-3" style="margin-top:20px">
+        <div class="card span-2">
+          <div class="card-header"><h2>Recent sales</h2><a class="small" href="../pages/sales.html">All sales</a></div>
+          <div id="recentSales" ><div class="loading">Loading…</div></div>
+        </div>
+        <div class="stack">
+          <div class="card highlight" id="topVendor"><div class="loading" style="color:#cfe6d6">Loading…</div></div>
+          <div class="card">
+            <div class="card-header"><h2>Top 5 fruits</h2><a class="small" href="../pages/reports.html">Reports</a></div>
+            <div id="topFruits" ><div class="loading">Loading…</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid grid-2" style="margin-top:20px">
+        <div class="card">
+          <div class="card-header"><h2>Vendors with outstanding balances</h2><a class="small" href="../pages/payments.html">Payments</a></div>
+          <div id="balances" ><div class="loading">Loading…</div></div>
+        </div>
+        <div class="card">
+          <div class="card-header"><h2>Revenue this month by packaging size</h2></div>
+          <div id="sizeRevenue" ><div class="loading">Loading…</div></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../components/toast.js"></script>
+  <script src="../components/modal.js"></script>
+  <script src="../components/table.js"></script>
+  <script src="../components/lineItems.js"></script>
+  <script src="../components/sidebar.js"></script>
+  <script src="../js/pages/dashboard.js"></script>
+</body>
+</html>

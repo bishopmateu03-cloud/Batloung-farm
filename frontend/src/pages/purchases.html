@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Purchases · Batloung Farm DMS</title>
+  <link rel="icon" href="../assets/images/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+<body data-page="purchases">
+  <div class="app">
+    <aside id="sidebar" class="sidebar"></aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <h1>Purchases</h1>
+          <p class="subtitle">Fruit bought from suppliers – recording a purchase increases stock</p>
+        </div>
+        <div class="topbar-actions"><button id="btnAdd" class="btn btn-primary">+ Record purchase</button></div>
+      </header>
+
+      <section class="card">
+        <div class="card-header">
+          <div class="filters"><select id="supplierFilter" aria-label="Supplier"><option value="">All suppliers</option></select>
+            <label class="small muted" for="start">From</label><input id="start" type="date">
+            <label class="small muted" for="end">To</label><input id="end" type="date"></div>
+          <span class="muted small" id="count"></span>
+        </div>
+        <div id="table"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../components/toast.js"></script>
+  <script src="../components/modal.js"></script>
+  <script src="../components/table.js"></script>
+  <script src="../components/lineItems.js"></script>
+  <script src="../components/sidebar.js"></script>
+  <script src="../js/pages/purchases.js"></script>
+</body>
+</html>

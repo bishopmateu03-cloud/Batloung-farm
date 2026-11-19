@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payments &amp; credit · Batloung Farm DMS</title>
+  <link rel="icon" href="../assets/images/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body data-page="payments">
+  <div class="app">
+    <aside id="sidebar" class="sidebar"></aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <h1>Payments &amp; credit</h1>
+          <p class="subtitle">Cash, mobile money and outstanding vendor balances</p>
+        </div>
+        <div class="topbar-actions"><button id="btnAdd" class="btn btn-primary">+ Record payment</button></div>
+      </header>
+      <section class="grid grid-3" style="margin-bottom:20px">
+        <div class="card kpi"><div class="kpi-icon red" aria-hidden="true">💳</div><div><div class="kpi-label">Total outstanding</div><div class="kpi-value" id="kpiOutstanding">…</div></div></div>
+        <div class="card kpi"><div class="kpi-icon orange" aria-hidden="true">🧺</div><div><div class="kpi-label">Vendors owing</div><div class="kpi-value" id="kpiVendors">…</div></div></div>
+        <div class="card kpi"><div class="kpi-icon green" aria-hidden="true">✅</div><div><div class="kpi-label">Payments collected</div><div class="kpi-value" id="kpiCollected">…</div><div class="kpi-sub">for the selected method</div></div></div>
+      </section>
+
+      <section class="card" style="margin-bottom:20px">
+        <div class="card-header"><h2>Vendor balances</h2>
+          <label class="check"><input type="checkbox" id="owingOnly" checked> Only vendors who owe money</label></div>
+        <div id="balances"></div>
+      </section>
+
+      <section class="card">
+        <div class="card-header"><h2>Payment history</h2>
+          <select id="methodFilter" aria-label="Payment method" style="width:auto">
+            <option value="">All methods</option><option value="CASH">Cash</option><option value="MOBILE_MONEY">Mobile money</option>
+          </select></div>
+        <div id="history"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../components/toast.js"></script>
+  <script src="../components/modal.js"></script>
+  <script src="../components/table.js"></script>
+  <script src="../components/lineItems.js"></script>
+  <script src="../components/sidebar.js"></script>
+  <script src="../js/pages/payments.js"></script>
+</body>
+</html>

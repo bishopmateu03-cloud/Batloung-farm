@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suppliers · Batloung Farm DMS</title>
+  <link rel="icon" href="../assets/images/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+</head>
+<body data-page="suppliers">
+  <div class="app">
+    <aside id="sidebar" class="sidebar"></aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <h1>Suppliers</h1>
+          <p class="subtitle">Fruit suppliers across South African provinces</p>
+        </div>
+        <div class="topbar-actions"><button id="btnAdd" class="btn btn-primary">+ Register supplier</button></div>
+      </header>
+
+      <section class="card location-map-card" aria-labelledby="supplier-map-title">
+        <div class="card-header">
+          <div>
+            <h2 id="supplier-map-title">Supplier regions in South Africa</h2>
+            <p class="small muted">Approximate locations inferred from saved addresses and provinces</p>
+          </div>
+          <a class="btn btn-outline btn-sm" href="https://www.openstreetmap.org/?#map=5/-29/24" target="_blank" rel="noreferrer">
+            Open map
+          </a>
+        </div>
+        <div id="supplierMap" class="location-map" role="region" aria-label="Approximate map of supplier locations"></div>
+        <p id="supplierMapStatus" class="small muted location-map-note" role="status" aria-live="polite">Loading map…</p>
+      </section>
+
+      <section class="card">
+        <div class="card-header">
+          <div class="filters"><label class="sr-only" for="provinceFilter">Province</label><select id="provinceFilter" aria-label="Filter by province"></select></div>
+          <span class="muted small" id="count"></span>
+        </div>
+        <div id="table"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../components/toast.js"></script>
+  <script src="../components/modal.js"></script>
+  <script src="../components/table.js"></script>
+  <script src="../components/lineItems.js"></script>
+  <script src="../components/sidebar.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="../components/locationMap.js"></script>
+  <script src="../js/pages/suppliers.js"></script>
+</body>
+</html>

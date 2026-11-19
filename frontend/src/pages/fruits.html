@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fruits · Batloung Farm DMS</title>
+  <link rel="icon" href="../assets/images/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+<body data-page="fruits">
+  <div class="app">
+    <aside id="sidebar" class="sidebar"></aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <h1>Fruits</h1>
+          <p class="subtitle">Fruit types distributed by Batloung Farm</p>
+        </div>
+        <div class="topbar-actions"><button id="btnAdd" class="btn btn-primary">+ Register fruit</button></div>
+      </header>
+
+      <section class="card">
+        <div class="card-header">
+          <div class="filters"><select id="statusFilter" aria-label="Filter by status">
+              <option value="">All statuses</option><option value="ACTIVE">Active</option><option value="INACTIVE">Inactive</option>
+            </select></div>
+          <span class="muted small" id="count"></span>
+        </div>
+        <div id="table"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../components/toast.js"></script>
+  <script src="../components/modal.js"></script>
+  <script src="../components/table.js"></script>
+  <script src="../components/lineItems.js"></script>
+  <script src="../components/sidebar.js"></script>
+  <script src="../js/pages/fruits.js"></script>
+</body>
+</html>

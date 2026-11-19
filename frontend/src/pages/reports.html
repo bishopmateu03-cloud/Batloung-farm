@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reports · Batloung Farm DMS</title>
+  <link rel="icon" href="../assets/images/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body data-page="reports">
+  <div class="app">
+    <aside id="sidebar" class="sidebar"></aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <h1>Reports</h1>
+          <p class="subtitle">Sales and stock reports · <span id="generated"></span></p>
+        </div>
+        <div class="topbar-actions"><button id="btnPrint" class="btn btn-outline">🖨️ Print reports</button></div>
+      </header>
+      <section class="grid grid-3">
+        <div class="card span-2">
+          <div class="card-header"><div><h2>1. Most frequently sold fruits</h2><p class="small muted">Ranked by boxes sold</p></div>
+            <select id="topLimit" aria-label="Number of fruits" style="width:auto" class="no-print">
+              <option value="5" selected>Top 5</option><option value="10">Top 10</option>
+            </select></div>
+          <div id="topFruits" ><div class="loading">Loading…</div></div>
+        </div>
+        <div class="card highlight">
+          <h2 style="margin-bottom:12px">3. Top vendor</h2>
+          <div id="topVendor"><div class="loading" style="color:#cfe6d6">Loading…</div></div>
+        </div>
+      </section>
+
+      <section class="card" style="margin-top:20px">
+        <div class="card-header"><h2>2. Sales revenue for a date range</h2>
+          <form id="revenueForm" class="filters no-print">
+            <label class="small muted" for="revStart">From</label><input id="revStart" type="date" required>
+            <label class="small muted" for="revEnd">To</label><input id="revEnd" type="date" required>
+            <button class="btn btn-primary btn-sm" type="submit">Run report</button>
+          </form></div>
+        <div id="revenueResult" ><div class="loading">Loading…</div></div>
+      </section>
+
+      <section class="card" style="margin-top:20px">
+        <div class="card-header"><h2>4. Current stock levels by fruit and packaging size</h2></div>
+        <div id="stockLevels" ><div class="loading">Loading…</div></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../components/toast.js"></script>
+  <script src="../components/modal.js"></script>
+  <script src="../components/table.js"></script>
+  <script src="../components/lineItems.js"></script>
+  <script src="../components/sidebar.js"></script>
+  <script src="../js/pages/reports.js"></script>
+</body>
+</html>

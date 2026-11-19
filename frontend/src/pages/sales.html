@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sales · Batloung Farm DMS</title>
+  <link rel="icon" href="../assets/images/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+<body data-page="sales">
+  <div class="app">
+    <aside id="sidebar" class="sidebar"></aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <h1>Sales</h1>
+          <p class="subtitle">Sales to registered vendors – completing a sale reduces stock</p>
+        </div>
+        <div class="topbar-actions"><button id="btnAdd" class="btn btn-accent">+ Record sale</button></div>
+      </header>
+
+      <section class="card">
+        <div class="card-header">
+          <div class="filters"><select id="vendorFilter" aria-label="Vendor"><option value="">All vendors</option></select>
+            <select id="statusFilter" aria-label="Payment status">
+              <option value="">All payment statuses</option><option value="PAID">Paid</option>
+              <option value="PARTIALLY_PAID">Partially paid</option><option value="UNPAID">Unpaid</option>
+            </select>
+            <label class="small muted" for="start">From</label><input id="start" type="date">
+            <label class="small muted" for="end">To</label><input id="end" type="date"></div>
+          <span class="muted small" id="count"></span>
+        </div>
+        <div id="table"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../components/toast.js"></script>
+  <script src="../components/modal.js"></script>
+  <script src="../components/table.js"></script>
+  <script src="../components/lineItems.js"></script>
+  <script src="../components/sidebar.js"></script>
+  <script src="../js/pages/sales.js"></script>
+</body>
+</html>

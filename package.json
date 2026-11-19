@@ -1,0 +1,12 @@
+{
+  "name": "batloung-farm-dms-launcher",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix ./backend run dev",
+    "start": "node backend/server.js",
+    "build": "npm --prefix ./frontend run build"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

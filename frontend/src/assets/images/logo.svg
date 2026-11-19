@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Batloung Farm">
+  <rect width="64" height="64" rx="14" fill="#2f7d4e"/>
+  <path d="M12 30h40l-4 22H16z" fill="#e8862a"/>
+  <path d="M14 36h36M15 43h34" stroke="#b9661c" stroke-width="2"/>
+  <circle cx="24" cy="25" r="7" fill="#d8402f"/>
+  <circle cx="38" cy="24" r="7.5" fill="#f2b632"/>
+  <circle cx="31" cy="20" r="6" fill="#7bbf4a"/>
+  <path d="M31 14c1-4 4-6 8-6-1 4-4 6-8 6z" fill="#a7e07a"/>
+</svg>

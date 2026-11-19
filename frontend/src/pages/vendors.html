@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vendors · Batloung Farm DMS</title>
+  <link rel="icon" href="../assets/images/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+</head>
+<body data-page="vendors">
+  <div class="app">
+    <aside id="sidebar" class="sidebar"></aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <h1>Vendors</h1>
+          <p class="subtitle">Street vendors and small retailers in Lesotho</p>
+        </div>
+        <div class="topbar-actions"><button id="btnAdd" class="btn btn-primary">+ Register vendor</button></div>
+      </header>
+
+      <section class="card location-map-card" aria-labelledby="vendor-map-title">
+        <div class="card-header">
+          <div>
+            <h2 id="vendor-map-title">Vendor regions in Lesotho</h2>
+            <p class="small muted">Approximate locations inferred from saved vendor locations</p>
+          </div>
+          <a class="btn btn-outline btn-sm" href="https://www.openstreetmap.org/?#map=8/-29.6/28.25" target="_blank" rel="noreferrer">
+            Open map
+          </a>
+        </div>
+        <div id="vendorMap" class="location-map" role="region" aria-label="Approximate map of vendor locations"></div>
+        <p id="vendorMapStatus" class="small muted location-map-note" role="status" aria-live="polite">Loading map…</p>
+      </section>
+
+      <section class="card">
+        <div class="card-header">
+          <div class="filters"><input id="search" class="search" type="search" placeholder="🔍 Search by name or phone number…" aria-label="Search vendors"></div>
+          <span class="muted small" id="count"></span>
+        </div>
+        <div id="table"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../components/toast.js"></script>
+  <script src="../components/modal.js"></script>
+  <script src="../components/table.js"></script>
+  <script src="../components/lineItems.js"></script>
+  <script src="../components/sidebar.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="../components/locationMap.js"></script>
+  <script src="../js/pages/vendors.js"></script>
+</body>
+</html>
