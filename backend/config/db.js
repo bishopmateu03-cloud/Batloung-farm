@@ -19,6 +19,13 @@ const pool = mysql.createPool({
   ssl: useSsl ? { minVersion: 'TLSv1.2', rejectUnauthorized: true } : undefined,
 });
 
+// TiDB enforces ONLY_FULL_GROUP_BY; relax it per connection so MySQL-style queries work.
+pool.pool.on('connection', (conn) => {
+  conn.query("SET SESSION sql_mode = REPLACE(@@sql_mode, 'ONLY_FULL_GROUP_BY', '')", (err) => {
+    if (err) console.error('[db] Could not relax sql_mode:', err.message);
+  });
+});
+
 // A pool error must never crash the process – log it and carry on.
 pool.on('error', (err) => {
   console.error('[db] Pool error:', err.code || err.message);
