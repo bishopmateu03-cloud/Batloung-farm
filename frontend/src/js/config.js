@@ -1,14 +1,18 @@
 /**
  * Frontend configuration.
- * When the page is served by the Express backend (http://localhost:3000) the API
- * is on the same origin. When opened another way (Live Server, file://) it falls
- * back to the backend URL below. Change BACKEND_URL if your backend uses another port.
+ * Same origin when served by the Express backend (localhost:3000 locally, or any
+ * deployed host like Render). Falls back to BACKEND_URL only when the page is
+ * opened via Live Server or file://.
  */
 window.App = window.App || {};
 
 (function () {
   const BACKEND_URL = 'http://localhost:3000';
-  const sameOrigin = location.protocol.startsWith('http') && location.port === '3000';
+
+  const isLiveServerOrFile =
+    location.protocol === 'file:' ||
+    (['localhost', '127.0.0.1'].includes(location.hostname) && location.port !== '3000');
+  const sameOrigin = !isLiveServerOrFile;
 
   App.config = {
     API_BASE: sameOrigin ? '/api' : `${BACKEND_URL}/api`,
